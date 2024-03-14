@@ -82,14 +82,14 @@ csharp_style_conditional_delegate_call = true:warning
 # var preferences
 # C#
 csharp_style_var_for_built_in_types = false:warning
-csharp_style_var_when_type_is_apparent = false:warning
-csharp_style_var_elsewhere = false:warning
+csharp_style_var_when_type_is_apparent = true:warning
+csharp_style_var_elsewhere = true:warning
 
 # Expression-bodied members
 # C#
-csharp_style_expression_bodied_methods = false:silent
-csharp_style_expression_bodied_constructors = false:silent
-csharp_style_expression_bodied_operators = false:silent
+csharp_style_expression_bodied_methods = true:suggestion
+csharp_style_expression_bodied_constructors = true:suggestion
+csharp_style_expression_bodied_operators = true:suggestion
 ## This rule has less effect, because dotnet_style_prefer_auto_properties forces you to implement auto-properties.
 csharp_style_expression_bodied_properties = true:warning
 csharp_style_expression_bodied_indexers = true:warning
@@ -101,7 +101,7 @@ csharp_style_expression_bodied_local_functions = true:warning
 # C#
 csharp_style_pattern_matching_over_is_with_cast_check = true:warning
 csharp_style_pattern_matching_over_as_with_null_check = true:warning
-csharp_style_prefer_switch_expression = true:suggestion
+csharp_style_prefer_switch_expression = true:warning
 csharp_style_prefer_pattern_matching = true:warning
 csharp_style_prefer_not_pattern = true:warning
 
@@ -116,14 +116,11 @@ csharp_preferred_modifier_order = public,private,protected,internal,static,exter
 
 # unused values
 # .NET
-# > assigned this to non public because azure functions with http trigger might have unused HttpRequest-parameters
 dotnet_code_quality_unused_parameters = non_public 
 dotnet_remove_unnecessary_suppression_exclusions = all
 # C#
-## deactivated (none) because it causes warnings, which are not usefull in the given contexts
-## Should be crosschecked, whether this should be used
-csharp_style_unused_value_expression_statement_preference = discard_variable:none
-csharp_style_unused_value_assignment_preference = discard_variable:none
+csharp_style_unused_value_expression_statement_preference = discard_variable:suggestion
+csharp_style_unused_value_assignment_preference = discard_variable:warning
 
 ###################################################################################################
 # Formatting Rules                                                                                #
@@ -133,7 +130,7 @@ csharp_style_unused_value_assignment_preference = discard_variable:none
 # Organize using directives
 # .NET
 dotnet_sort_system_directives_first = true
-dotnet_separate_import_directive_groups = false
+dotnet_separate_import_directive_groups = true
 # C#
 csharp_using_directive_placement = outside_namespace:error
 csharp_prefer_simple_using_statement = true:warning
