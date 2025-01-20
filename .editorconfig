@@ -185,6 +185,10 @@ csharp_prefer_braces = false:silent
 csharp_preserve_single_line_statements = false
 csharp_preserve_single_line_blocks = true
 
+# Syntactic sugar stuff
+# Primary constructors
+csharp_style_prefer_primary_constructors = false
+
 ##########################################################################################################################################################
 # Naming Conventions                                                                                                                                     #
 # https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/naming-rules                                                            #
